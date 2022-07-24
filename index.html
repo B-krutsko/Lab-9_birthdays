@@ -16,10 +16,11 @@
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
                 <form action="/" method="POST">
-                    <input type="text" placeholder="Name" name="name">
-                    <input type="text" placeholder="Month" name="month">
-                    <input type="text" placeholder="Day" name="day">
+                    <input type="text" placeholder="Name" name = "name" autocomplete="off" >
+                    <input type="number" placeholder="Month" max="12" min="1" name = "month" autocomplete="off" >
+                    <input type="number" placeholder="Day" max="31" min="1" name = "day" autocomplete="off" >
                     <input type="submit" value="Add Birthday">
+                </form>
             </div>
 
             <div class="section">
@@ -34,12 +35,12 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                    {% for person in people %}
+                        {% for person in people %}
                         <tr>
-                            <td>{{ persone.name }}</td>
-                            <td>{{ persone.month }} / {{ persone.day }}</td>
+                            <td>{{ person.name }}</td>
+                            <td>{{ person.month }} / {{ person.day }}</td>
                         </tr>
-                    {% endfor %}
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
